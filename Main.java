@@ -6,6 +6,8 @@ public class Main
     // lastFirstN("koolaid", "water", 3);
 
     stringManip("pizza ", "sleep");
+
+    System.out.println(removeStr("chakboom", "akb"));
   }
 
   /** Precondition: s1 and s2 are not null
@@ -30,9 +32,6 @@ public class Main
   public static void stringManip(String s1, String s2)
   {
     
-    // String sUpper;
-    // String sL;
-
     String Up = s1.toUpperCase();
 
 
@@ -40,9 +39,9 @@ public class Main
     // String Reg = Reg.substring(0, 1).toUpperCase();
     String firstLetter = Reg0.substring(0, 1);  // first letter of 2nd word
     String firstLetterCAPS = firstLetter.toUpperCase(); 
-    String everythingAfter = s2.substring(1);  // everything AFTER the 1st letter
+    String everythingAfter = Reg0.substring(1);  // everything AFTER the 1st letter
     everythingAfter = everythingAfter.toLowerCase();
-    Reg0 = firstLetter + everythingAfter;
+    Reg0 = firstLetterCAPS + everythingAfter;
    
 
     String output = Up + Reg0;
@@ -59,7 +58,19 @@ public class Main
   */
   public static String removeStr(String s1, String s2)
   {
-    String output = null;
+
+    String before;
+    String after; 
+    int Start = s1.indexOf(s2); // where s2 is in s1
+    int End = Start + s2.length();
+
+    before = s1.substring(0, Start); // from 0 to akb
+    after = s1.substring(End); // from akb to end
+
+
+    
+    
+    String output = before + after;
     return output;
   }
 }
